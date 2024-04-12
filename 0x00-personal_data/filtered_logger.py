@@ -7,6 +7,8 @@ Regex-ing module - Contains function for obfuscating log messages using regex.
 import logging
 import re
 from typing import List
+import os
+import mysql.connector
 
 
 def filter_datum(fields: List[str], redaction: str, message: str,
@@ -84,3 +86,30 @@ def get_logger() -> logging.Logger:
     stream_handler.setFormatter(formatter)
     logger.addHandler(stream_handler)
     return logger
+
+
+def get_db() -> mysql.connector.connection.MySQLConnection:
+    """
+    Returns a connector to the database.
+
+    Returns:
+        A connector to the MySQL database.
+    """
+    # Getting database credentials from environment variables
+    username = os.getenv("PERSONAL_DATA_DB_USERNAME", "root")
+    password = os.getenv("PERSONAL_DATA_DB_PASSWORD", "")
+    host = os.getenv("PERSONAL_DATA_DB_HOST", "localhost")
+    database = os.getenv("PERSONAL_DATA_DB_NAME", "my_db")
+
+    # Connecting to the database
+    try:
+        db = mysql.connector.connect(
+            user=username,
+            password=password,
+            host=host,
+            database=database
+        )
+        return db
+    except mysql.connector.Error as err:
+        print(f"Error connecting to database: {err}")
+        raise
