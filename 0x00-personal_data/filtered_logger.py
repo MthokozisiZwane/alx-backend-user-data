@@ -113,3 +113,40 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     except mysql.connector.Error as err:
         print(f"Error connecting to database: {err}")
         raise
+
+
+def main() -> None:
+    """
+    Retrieve data from the database and log each row with filtering.
+    """
+    # Gets the logger configured in Task 2
+    logger = get_logger()
+
+    try:
+        # connection to the database
+        db = get_db()
+        cursor = db.cursor()
+
+        # Retrieves all rows from the users table
+        cursor.execute("SELECT * FROM users")
+
+        # Log each row with information filtered
+        for row in cursor.fetchall():
+            # Construcst the log message with sensitive information filtered
+            filtered_row = '; '.join([
+                f"{key}={filter_datum(PII_FIELDS, '***', str(value), ';')}"
+                for key, value in zip(cursor.column_names, row)
+            ])
+            logger.info(filtered_row)
+
+    except Exception as e:
+        logger.error(
+            f"Error retrieving data from database: {e}"
+        )
+    finally:
+        cursor.close()
+        db.close()
+
+
+if __name__ == "__main__":
+    main()
