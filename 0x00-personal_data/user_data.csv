@@ -1,125 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="google" content="notranslate">
-
-    
-
-    <title>Sessions - new | Intranet</title>
-
-      <link rel="stylesheet" href="https://use.typekit.net/xgz4ilr.css">
-      <link rel="stylesheet" media="all" href="/assets/application_alx-18ad0a04fda42baa6fa542d94258cfe1c97a3faee2a91204d99c08c4382ab21c.css" />
-      <script src="https://www.gstatic.com/charts/loader.js"></script>
-      <script src="/assets/application-4013a5403da5765fc4df54f925fc1e4391897907edd19da0062bb21512c02328.js"></script>
-      <link rel="shortcut icon" type="image/x-icon" href="/favicon_alx.ico" />
-      <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="ms7rrhg1KJNbgSmJCOg3QHhP0WLp1pa8iYoSXhQbZmgRjz2v6D7bLirxNS7IfEzqwd3RW2X8F7OU5ri8iGuHUw" />
-
-      <link rel="apple-touch-icon" href="/apple-touch-icon_alx.png">
-
-      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-      <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-
-      <!-- Store user timezone -->
-      <script>
-        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
-      </script>
-
-      <!-- intro.js for interactive onboarding -->
-
-      <!-- React -->
-      <script src="/packs/js/application-fc9d0b713d48af32bd16.js"></script>
-      <link rel="stylesheet" media="screen" href="/packs/css/application-87456da7.css" />
-  </head>
-
-  <body class="env_production notranslate"
-        translate="no"
-        class="notranslate"
-        data-theme-suffix="_alx">
-    
-
-
-    <main>
-        
-
-        <div id="layout-bars">
-          
-          
-          
-          
-          
-        </div>
-
-      <article class="">
-
-        <div class="logged_out_form">
-
-  <h2 class="hbtn_logo">
-  </h2>
-
-  <form class="sm-gap" id="new_user" action="/auth/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="47Vdnzh__6KZgMp8yd8h7n390kyLOyRcLKmnXjJkQwbnIzU0zidIsYo3pT1Mskec3pUWrA8UXRH71-lyMIiMtg" autocomplete="off" />
-
-
-    <div class="field">
-      <label class="control-label" for="user_email">Email</label><br>
-      <input autofocus="autofocus" class="form-control" type="text" name="user[email]" id="user_email" />
-    </div>
-
-    <div class="field">
-      <label class="control-label" for="user_password">Password</label><br>
-      <input autocomplete="off" class="form-control" type="password" name="user[password]" id="user_password" />
-    </div>
-
-      <div class="field">
-        <input name="user[remember_me]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
-        <label class="control-label" for="user_remember_me">Remember me</label>
-      </div>
-
-    <div class="actions">
-      <input type="submit" name="commit" value="Log in" class="btn btn-primary" data-disable-with="Log in" />
-    </div>
-</form>
-  <ul id="devise_links" class="gap">
-
-
-
-    <li>
-      <a href="/auth/password/new">Forgot your password?</a>
-    </li>
-
-
-    <li>
-      <!--<a href="/auth/unlock/new">Didn&#39;t receive unlock instructions?</a>-->
-    </li>
-
-
-  <!--
-  <li>
-    <a href="https://aka.ms/ssprsetup">Forgot your password?</a>
-  </li>
-  -->
-</ul>
-
-
-</div>
-
-
-      </article>
-
-      <div class="copyright">Copyright © 2024 ALX, All rights reserved.</div>
-
-    </main>
-
-
-
-
-  </body>
-</html>
+name,email,phone,ssn,password,ip,last_login,user_agent
+"Marlene Wood","hwestiii@att.net","(473) 401-4253","261-72-6780","K5?BMNv","60ed:c396:2ff:244:bbd0:9208:26f2:93ea","2019-11-14 06:14:24","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36"
+"Rhianna Barrera","hampton@me.com","(473) 310-1175","494-07-2341","cj22zAH&","6131:10bb:3bcf:6ce5:497c:fdcb:5c7a:dd5d","2019-11-14 06:14:44","Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+"Ruth Trevino","valdez@verizon.net","(731) 915-5892","450-76-5961","EwV9tC9#","e501:2103:c25:ab98:394a:494:5da8:731d","2019-11-14 06:15:00","Mozilla/5.0 (Linux; Android 8.1.0; motorola one Build/OPKS28.63-18-3; wv AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.80 Mobile Safari/537.36 Instagram 72.0.0.21.98 Android (27/8.1.0; 320dpi; 720x1362; motorola; motorola one; deen_sprout; qcom; pt_BR; 132081645)"
+"Kallie Lewis","lushe@hotmail.com","(706) 241-9332","174-40-2889","%9xwUUpt","630:145e:8acc:d793:5a10:11d8:768:50c0","2019-11-14 06:15:09","Mozilla/5.0 (Linux; U; Android 4.1.2; de-de; GT-I9100 Build/JZO54K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+"Jake Wu","ramollin@comcast.net","(637) 605-9257","247-52-6862","2>jET?7q","6479:e3ae:d70c:c75b:a029:7b69:cda0:e593","2019-11-14 06:15:17","Mozilla/5.0 (Linux; Android 7.0; SM-G570M Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/193.0.0.45.101;]"
+"Salvatore Pollard","drezet@hotmail.com","(886) 802-0292","512-74-7870","3c~Luj%?","6ccd:834f:c8c9:22e4:b815:ea2c:a350:74c2","2019-11-14 06:15:28","Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 OPR/36.0.2130.32"
+"Zackery Ford","jshearer@live.com","(997) 600-9698","579-03-7675","S+4DvgmW","a7ab:2c8:4a44:978f:4eec:e64e:53e5:b21b","2019-11-14 06:15:36","Mozilla/5.0 (Windows NT 5.1; rv:36.0) Gecko/20100101 Firefox/36.0"
+"Trystan Baker","dkeeler@comcast.net","(804) 777-8345","548-65-0641","Dd~Ep5M3","ab22:4193:dd2c:a632:2ca0:f520:3941:fa65","2019-11-14 06:15:57","Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; KTXN)"
+"Davon Gay","geoffr@mac.com","(644) 566-1838","358-18-2062","L4D3&5jq","d29c:1b76:cd05:6e7c:1920:959e:66e1:e490","2019-11-14 06:16:04","Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 [FBAN/FBIOS;FBDV/iPhone10,2;FBMD/iPhone;FBSN/iOS;FBSV/12.3.2;FBSS/3;FBCR/Verizon;FBID/phone;FBLC/en_US;FBOP/5]"
+"Eliza Burke","satishr@yahoo.com","(212) 237-9866","472-42-0884","7xM6XD$T","d160:9a44:b8c2:72d1:4c10:1d3c:950b:d060","2019-11-14 06:16:10","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0"
+"Belen Bailey","bcevc@yahoo.com","(539) 233-4942","203-38-5395","^3EZ~TkX","f724:c5d1:a14d:c4c5:bae2:9457:3769:1969","2019-11-14 06:16:19","Mozilla/5.0 (Linux; U; Android 4.1.2; de-de; GT-I9100 Build/JZO54K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+"Lilly Stuart","slaff@mac.com","(404) 269-6404","297-98-5726","Dc9+NZ>H","e848:e856:4e0b:a056:54ad:1e98:8110:ce1b","2019-11-14 06:16:24","Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; KTXN)"
