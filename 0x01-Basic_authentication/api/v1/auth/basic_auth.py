@@ -10,6 +10,10 @@ from models.user import User
 from typing import Optional
 from api.v1.auth.auth import Auth
 
+"""
+The BasicAuth Class
+
+"""
 
 class BasicAuth(Auth):
     """
