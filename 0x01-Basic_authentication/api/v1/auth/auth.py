@@ -22,7 +22,7 @@ class Auth:
             is not required.
 
         Returns:
-            bool: True if authentication is required, False otherwise.
+            bool: True if authenticatiion is required, False otherwise.
         """
         if path is None:
             return True
