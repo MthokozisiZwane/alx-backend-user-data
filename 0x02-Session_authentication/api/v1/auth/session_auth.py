@@ -4,6 +4,10 @@
 
 from api.v1.auth.auth import Auth
 
+"""
+SessionAuth Class
+"""
+
 
 class SessionAuth(Auth):
     """Class inheriting from Auth representing session-based authentication."""
