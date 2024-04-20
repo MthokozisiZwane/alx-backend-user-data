@@ -4,6 +4,10 @@
 from api.v1.views import app_views
 from flask import abort, jsonify, request
 from models.user import User
+import os
+# from api.v1.auth import basic_auth
+from api.v1.auth import auth
+from api.v1.auth.basic_auth import BasicAuth
 
 
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
@@ -120,3 +124,22 @@ def update_user(user_id: str = None) -> str:
         user.last_name = rj.get('last_name')
     user.save()
     return jsonify(user.to_json()), 200
+
+
+@app_views.route('/users/me', methods=['GET'], strict_slashes=False)
+def get_current_user() -> str:
+    """ GET /api/v1/users/me
+    Return:
+      - Current user's object JSON represented
+      - 401 if no user is authenticated
+    """
+    auth_type = os.getenv("AUTH_TYPE")
+    if auth_type == "basic_auth":
+        auth = BasicAuth()
+    else:
+        auth = Auth()
+
+    current_user = auth.current_user(request)
+    if current_user is None:
+        abort(401)
+    return jsonify(current_user.to_json())
