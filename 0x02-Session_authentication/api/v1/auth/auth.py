@@ -3,6 +3,7 @@
 The class to manage the API authentication
 """
 
+import os
 from typing import List, TypeVar
 from flask import request
 
@@ -10,6 +11,7 @@ from flask import request
 The Auth class
 
 """
+
 
 class Auth:
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
@@ -59,3 +61,13 @@ class Auth:
             TypeVar('User'): The current user object.
         """
         return None
+
+    def session_cookie(self, request=None):
+        """
+        Return the value of the session cookie from the request.
+        """
+        if request is None:
+            return None
+
+        session_name = os.getenv("SESSION_NAME", "_my_session_id")
+        return request.cookies.get(session_name)
