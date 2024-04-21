@@ -2,8 +2,10 @@
 """
 New view for authentication
 """
+from api.v1.views import app_views
+from os import getenv
 from flask import Blueprint, request, abort, jsonify
-from api.v1.app import auth
+# from api.v1.app import auth
 from models.user import User
 
 session_auth = Blueprint('session_auth', __name__, url_prefix='/auth_session')
@@ -43,3 +45,17 @@ def login():
 
     else:
         abort(405)
+
+
+from api.v1.app import auth
+
+
+@app_views.route('/api/v1/auth_session/logout',
+           methods=['DELETE'], strict_slashes=False)
+def logout():
+    """
+    Logout route.
+    """
+    if not auth.destroy_session(request):
+        abort(404)
+    return jsonify({}), 200
