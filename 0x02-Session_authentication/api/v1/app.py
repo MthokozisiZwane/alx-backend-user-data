@@ -2,8 +2,6 @@
 """
 Main module for the API.
 
-This module initializes the Flask application and sets up
-routes, error handlers,and authentication mechanisms
 """
 import os
 from api.v1.auth.basic_auth import BasicAuth
@@ -16,7 +14,6 @@ from api.v1.auth.auth import Auth
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
-# Enable Cross-Origin Resource Sharing (CORS) for all routes in the API
 CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 auth_type = os.getenv("AUTH_TYPE")
