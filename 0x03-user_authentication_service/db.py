@@ -10,7 +10,9 @@ from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 
 class DB:
-    """DB class responsible for database operations."""
+    """
+    DB class
+    """
 
     def __init__(self):
         """Initialize a new DB instance."""
@@ -53,7 +55,22 @@ class DB:
         Raises:
             ValueError: If no user is found
         """
-        user = self._session.query(User).filter_by(**kwargs).first()
+        try:
+            user = self._session.query(User).filter_by(**kwargs).first()
+        except TypeError:
+            raise InvalidRequestError
         if user is None:
-            raise ValueError("User not found")
+            raise NoResultFound
         return user
+
+    def update_user(self, user_id: int, **kwargs) -> None:
+        """Update user attributes."""
+        user = self.find_user_by(id=user_id)
+        if not user:
+            raise ValueError("User not found")
+        for key, value in kwargs.items():
+            if hasattr(user, key):
+                setattr(user, key, value)
+            else:
+                raise ValueError(f"Invalid attribute: {key}")
+        self._session.commit()
