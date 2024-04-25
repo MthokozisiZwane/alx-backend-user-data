@@ -30,13 +30,6 @@ class DB:
 
     def add_user(self, email: str, hashed_password: str) -> User:
         """Adds a new user to the database.
-
-        Args:
-            email (str): Email of the user.
-            hashed_password (str): Hashed password of the user.
-
-        Returns:
-            User: The newly created User object.
         """
         user = User(email=email, hashed_password=hashed_password)
         self._session.add(user)
@@ -66,11 +59,10 @@ class DB:
     def update_user(self, user_id: int, **kwargs) -> None:
         """Update user attributes."""
         user = self.find_user_by(id=user_id)
-        if not user:
-            raise ValueError("User not found")
         for key, value in kwargs.items():
             if hasattr(user, key):
                 setattr(user, key, value)
             else:
-                raise ValueError(f"Invalid attribute: {key}")
+                raise ValueError
         self._session.commit()
+        return None
