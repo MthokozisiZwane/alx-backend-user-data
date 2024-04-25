@@ -51,11 +51,9 @@ class DB:
             User: The found User object.
 
         Raises:
-            ValueError: If no user is found or multiple users are found.
+            ValueError: If no user is found
         """
-        try:
-            return self._session.query(User).filter_by(**kwargs).one()
-        except NoResultFound:
+        user = self._session.query(User).filter_by(**kwargs).first()
+        if user is None:
             raise ValueError("User not found")
-        except MultipleResultsFound:
-            raise ValueError("Multiple users found")
+        return user
