@@ -19,7 +19,7 @@ def index():
 
 
 @app.route('/users', methods=['POST'], strict_slashes=False)
-def users():
+def users() -> str:
     """
     Registers a new user.
 
@@ -49,7 +49,6 @@ def users():
         return jsonify({'error': 'User not found'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-
 
 
 if __name__ == "__main__":
